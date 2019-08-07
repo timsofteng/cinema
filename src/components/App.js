@@ -1,8 +1,8 @@
 import React, { Fragment } from 'react';
 
-import Header from './header/Header';
-import Content from './Content/Content';
-import Footer from './footer/Footer';
+import Header from './header';
+import Content from './content';
+import Footer from './footer';
 import '../style.scss'
 
 const App = () => {

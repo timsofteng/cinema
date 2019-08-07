@@ -1,13 +1,11 @@
 import React from 'react';
+import {GenreAndDurationSC} from "./styles";
 
-const GenreAndDuration = (props) => {
-    return(
-        <div className="genre-and-duration">
+const GenreAndDuration = (props) =>
+        <GenreAndDurationSC>
             <div>{props.genre}</div>
             <div>|</div>
             <div>{props.duration}</div>
-        </div>
-    )
-}
+        </GenreAndDurationSC>
 
 export default GenreAndDuration;
