@@ -2,8 +2,6 @@ import React, { Fragment } from "react";
 import movies from "./movies.js";
 import MovieItem from "./MovieItem";
 
-const KEY = "91eb553fee2f60308d7a2c5824313ea5";
-
 class VideoList extends React.Component {
   renderMovies(movies) {
     return movies.results.map(item => {

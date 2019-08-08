@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import {footerColor} from "../../styles/constants";
 
 const FooterSC = styled.div`
   background-color: #ffffff;
@@ -10,8 +11,8 @@ const FooterSC = styled.div`
   padding-top: 2.5em;
   padding-bottom: 2.5em;
   box-sizing: border-box;
-  font-family: "Helvetica Neue";
-  color: #808080;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  color: ${footerColor};
   flex-shrink: 0;
   align-items: center;
 `;

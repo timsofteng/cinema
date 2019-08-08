@@ -1,11 +1,12 @@
 import styled from "styled-components";
+import {contentBgColor, contentPrimaryColor, secondaryColor} from "../../styles/constants";
 
 const ContentSC = styled.div`
-  background-color: #f5f6f6;
+  background-color: ${contentBgColor};
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
-  font-family: "Helvetica Neue";
+  font-family: "Helvetica Neue", Arial, sans-serif;
 `;
 
 const MovieItemSC = styled.div`
@@ -23,7 +24,7 @@ const Image = styled.img`
 
 const Description = styled.div`
   height: 30%;
-  background-color: #ffffff;
+  background-color: ${secondaryColor};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -41,7 +42,7 @@ const TitleAndRaiting = styled.div`
 const Title = styled.div`
   text-transform: uppercase;
   font-size: 19px;
-  font-family: "Helvetica Neue - Bold";
+  font-family: "Helvetica Neue - Bold", Arial, sans-serif;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -51,13 +52,13 @@ const Title = styled.div`
 
 const Raiting = styled.div`
   border-radius: 6px;
-  border: 0.05em solid #49c1f0;
+  border: 0.05em solid ${contentPrimaryColor};
   padding: 0.5em;
-  color: #47c3f0;
+  color: ${contentPrimaryColor};
 `;
 
 const Genre = styled.div`
-  color: #47c3f0;
+  color: ${contentPrimaryColor};
 `;
 
 export {

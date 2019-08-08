@@ -3,7 +3,7 @@ import React, { Fragment } from 'react';
 import Header from './header';
 import Content from './content';
 import Footer from './footer';
-import '../style.scss'
+import '../styles/style.scss'
 
 const App = () => {
     return (

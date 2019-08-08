@@ -5,12 +5,12 @@ import Button from "../../../common/Button";
 const Options = () => {
   return (
     <OptionsSC>
-      <Button type="primary" hideIcon text="Watch Now" />
-      <Button type="secondary" border="visible" hideIcon text="View Info" />
+      <Button type="primary" text="Watch Now" hideIcon />
+      <Button type="secondary" text="View Info" border hideIcon />
       <Button
         type="secondary"
-        icon="dots"
-        iconPosition="rigrh"
+        icon="ellipsis-v"
+        iconPosition="right"
         text="+ Favorites"
       />
     </OptionsSC>

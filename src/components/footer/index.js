@@ -9,7 +9,7 @@ const Footer = () => {
       <FooterRow />
       <Copyright>
         <span>Copyright &copy; 2017</span>&nbsp;
-        <Label size="inherit"/>
+        <Label firstWord="moovie" secondWord="rise" sizeInherit/>
         <span>. All Rights Reserved.</span>
       </Copyright>
     </FooterSC>

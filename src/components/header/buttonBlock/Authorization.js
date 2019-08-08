@@ -11,7 +11,7 @@ const Authorization = () => {
         iconPosition="left"
         text="Sign in"
       />
-      <Button type="primary" hideIcon text="Sign up" />
+      <Button type="primary" text="Sign up" hideIcon />
     </AuthorizationSC>
   );
 };

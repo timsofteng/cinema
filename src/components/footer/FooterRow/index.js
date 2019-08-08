@@ -12,7 +12,7 @@ const FooterRow = () => {
         <span>Contact</span>
       </Menu>
 
-      <Label color="blue" />
+      <Label color="primaryColor" firstWord="moovie" secondWord="rise" />
       <SocialNetworks />
     </FooterRowSC>
   );
