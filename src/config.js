@@ -1,0 +1,3 @@
+const THEMOVIEDB_API_KEY = "91eb553fee2f60308d7a2c5824313ea5";
+
+export default THEMOVIEDB_API_KEY;

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 
-import Header from './header/Header';
-import Content from './Content/Content';
-import Footer from './footer/Footer';
-import '../style.scss'
+import Header from './header';
+import Content from './content';
+import Footer from './footer';
+import '../styles/style.scss'
 
 const App = () => {
     return (

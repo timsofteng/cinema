@@ -1,12 +1,5 @@
-import React from 'react';
-import '../stylesHeader.scss';
+import React from "react";
+import { RaitingSC } from "./styles";
 
-const Raiting = () => {
-    return (
-        <div className="raiting">
-            Raiting
-        </div>
-    )
-};
-
+const Raiting = () => <RaitingSC>Raiting</RaitingSC>;
 export default Raiting;

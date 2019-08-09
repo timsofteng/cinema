@@ -1,12 +1,6 @@
-import React from 'react';
-import '../stylesHeader.scss';
+import React from "react";
+import { TitleSC } from "./styles";
 
-const Title = (props) => {
-    return (
-        <div className="title">
-            {props.text}
-        </div>
-    )
-}
+const Title = props => <TitleSC>{props.text}</TitleSC>;
 
 export default Title;
