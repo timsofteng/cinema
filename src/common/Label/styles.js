@@ -1,8 +1,9 @@
 import styled from "styled-components";
-import {primaryColor} from "../../styles/constants";
+import { primaryColor } from "../../styles/constants";
 
 const LabelSC = styled.div`
-  color: ${props => props.color === 'primaryColor' ? `${primaryColor}` : 'inherit' } ;
+  color: ${props =>
+    props.color === "primaryColor" ? `${primaryColor}` : "inherit"};
   display: flex;
   align-items: baseline;
   font-size: ${props => (props.sizeInherit ? "inherit" : "32px")};

@@ -18,7 +18,7 @@ const _defaultProps = {
 };
 
 const Button = props => (
-  <ButtonSC type={props.type} border={props.border}>
+  <ButtonSC onClick={props.onClick} type={props.type} border={props.border}>
     {props.hideIcon ? (
       props.text
     ) : (

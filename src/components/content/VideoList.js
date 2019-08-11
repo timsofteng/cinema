@@ -1,6 +1,7 @@
 import React, { Fragment } from "react";
 import movies from "./movies.js";
-import MovieItem from "./MovieItem";
+import {MovieItem} from "./MovieItem";
+import {CoverImage} from "./CoverImage/";
 
 class VideoList extends React.Component {
   renderMovies(movies) {
