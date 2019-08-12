@@ -13,11 +13,14 @@ const ButtonSC = styled.button`
   width: 7em;
   height: 2em;
   border-radius: 6px;
-  margin-left: 0.5em;
-  margin-right: 0.5em;
+  margin-left: ${props => props.margin_center ? "1.5em" : "0"};
+  margin-right:${props => props.margin_center ? "1.5em" : "0"};
+  padding-left: 0;
+  padding-right: 0;
   background-color: ${props =>
     props.type === 'secondary' ? "Transparent" : "#0aaee4"};
   border: ${props => (props.border ? "1px solid" : "Transparent")};
+  cursor:pointer;
 `;
 
 const ButtonWithIcon = styled.div`

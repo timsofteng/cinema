@@ -10,6 +10,7 @@ const Authorization = () => {
         icon="search"
         iconPosition="left"
         text="Sign in"
+        margin_center
       />
       <Button type="primary" text="Sign up" hideIcon />
     </AuthorizationSC>

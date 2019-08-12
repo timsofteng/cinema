@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import movies from "./movies.js";
 import {MovieItem} from "./MovieItem";
-import {CoverImage} from "./CoverImage/";
 
 class VideoList extends React.Component {
   renderMovies(movies) {
@@ -13,6 +12,7 @@ class VideoList extends React.Component {
           raiting={item.vote_average}
           genre={["Horror, ", "Comedy, ", "Adventures"]}
           key={item.id}
+          overview={item.overview}
         />
       );
     });

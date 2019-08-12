@@ -3,20 +3,18 @@ import PropTypes from "prop-types";
 
 import Button from "../../../common/Button";
 import PlayButton from "../PlayButton";
-import RaitingRatio from "../../../common/RaitingRatio";
+import FilmDescription from "../FilmDescritption";
 import CoverImage from "../CoverImage";
 import ViewInfo from "../ViewInfo";
 
-import {
-  MovieItemSC,
-  ImageContainer,
-  TitleAndRaiting,
-  Title,
-  Genre,
-  Description
-} from "./styles";
+import { MovieItemSC, ImageContainer, ItemBottom } from "./styles";
 
-import { HoverItemSC, ScopeOnHover } from "../HoverItem/styles";
+import {
+  HoverItemSC,
+  ContentOnHover,
+  Backdrop,
+  ScopeOnHover
+} from "../HoverItem/styles";
 
 const _propTypes = {
   image: PropTypes.string,
@@ -37,36 +35,51 @@ class MovieItem extends React.Component {
     this.setState({ viewInfo: true });
   };
 
+  offViewInfoClick = () => {
+    this.setState({ viewInfo: false });
+  };
+
   render() {
     console.log(this.state.viewInfo);
     return (
       <MovieItemSC>
         <HoverItemSC>
-          {this.state.viewInfo ? (
-            <ViewInfo src={this.props.image} alt={this.props.title} />
-          ) : (
-            <ScopeOnHover>
-              <PlayButton text="Watch Now" />
-              <Button
-                onClick={this.onViewInfoClick}
-                type="secondary"
-                text="View Info"
-                border
-                hideIcon
+          <Backdrop />
+          <ContentOnHover>
+            {this.state.viewInfo ? (
+              <ViewInfo
+                onClick={this.offViewInfoClick}
+                src={this.props.image}
+                alt={this.props.title}
+                title={this.props.title}
+                raiting={this.props.raiting}
+                genre={this.props.genre}
+                overview={this.props.overview}
               />
-            </ScopeOnHover>
-          )}
+            ) : (
+              <ScopeOnHover>
+                <PlayButton text="Watch Now" />
+                <Button
+                  onClick={this.onViewInfoClick}
+                  type="secondary"
+                  text="View Info"
+                  border
+                  hideIcon
+                />
+              </ScopeOnHover>
+            )}
+          </ContentOnHover>
         </HoverItemSC>
         <ImageContainer>
           <CoverImage src={this.props.image} alt={this.props.title} />
         </ImageContainer>
-        <Description>
-          <TitleAndRaiting>
-            <Title>{this.props.title}</Title>
-            <RaitingRatio raiting={this.props.raiting} />
-          </TitleAndRaiting>
-          <Genre>{this.props.genre}</Genre>
-        </Description>
+        <ItemBottom>
+          <FilmDescription
+            title={this.props.title}
+            raiting={this.props.raiting}
+            genre={this.props.genre}
+          />
+        </ItemBottom>
       </MovieItemSC>
     );
   }

@@ -6,7 +6,7 @@ const Options = () => {
   return (
     <OptionsSC>
       <Button type="primary" text="Watch Now" hideIcon />
-      <Button type="secondary" text="View Info" border hideIcon />
+      <Button type="secondary" text="View Info" border hideIcon   margin_center/>
       <Button
         type="secondary"
         icon="ellipsis-v"

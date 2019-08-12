@@ -5,6 +5,7 @@ const MovieItemSC = styled.div`
   height: 400px;
   width: 330px;
   margin-top: 1.5em;
+  position: relative;
 `;
 
 const ImageContainer = styled.div`
@@ -20,44 +21,18 @@ const Image = styled.img`
   position: relative;
 `;
 
-const Description = styled.div`
+const ItemBottom = styled.div`
   height: 30%;
   background-color: ${secondaryColor};
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
   border-radius: 0 0 5px 5px;
   padding-left: 1.8em;
   padding-right: 1.8em;
-`;
-
-const TitleAndRaiting = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Title = styled.div`
-  text-transform: uppercase;
-  font-size: 19px;
-  font-family: "Helvetica Neue - Bold", Arial, sans-serif;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  width: 210px;
-  height: 1em;
-`;
-
-const Genre = styled.div`
-  color: ${contentPrimaryColor};
-`;
+  padding-top: 3em;
+`
 
 export {
   MovieItemSC,
   ImageContainer,
   Image,
-  Description,
-  TitleAndRaiting,
-  Title,
-  Genre
+    ItemBottom
 };
