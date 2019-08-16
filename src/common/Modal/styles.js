@@ -11,7 +11,7 @@ const ModalSC = styled.div`
 `;
 
 const Background = styled.div`
-top: 0;
+  top: 0;
   position: fixed;
   background-color: #000000;
   opacity: 0.6;
