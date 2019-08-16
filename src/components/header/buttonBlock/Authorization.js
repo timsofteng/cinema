@@ -1,20 +1,111 @@
 import React from "react";
-import Button from "../../../common/Button";
-import { AuthorizationSC } from "./styles";
 
-const Authorization = () => {
-  return (
-    <AuthorizationSC>
-      <Button
-        type="secondary"
-        icon="search"
-        iconPosition="left"
-        text="Sign in"
-        margin_center
+import Modal from "../../../common/Modal";
+import Button from "../../../common/Button";
+import FormSignButton from "../../../common/Form/FormSignButton";
+
+import { AuthorizationSC } from "./styles";
+import { ButtonsBlock } from "../../../common/Form/styles";
+import Form from "../../../common/Form";
+import Input from "../../../common/Form/Input";
+import Checkbox from "../../../common/Form/Checkbox";
+
+
+const authButtonModal = [
+    {
+        key: "Sign In",
+        text: "Sign In"
+    },
+
+    {
+        key: "Sign Up",
+        text: "Sign Up"
+    }
+];
+
+class Authorization extends React.Component {
+  state = { isOpen: false };
+
+  toggleModal = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
+  authButtonHandler(type) {
+    this.setState({ authFormType: type });
+    this.toggleModal();
+  }
+
+  signInForm = () => (
+    <Form>
+      <Input type="text" placeholder="Login" border />
+      <Input type="text" placeholder="Password" border />
+      <Checkbox>
+        <input type="checkbox" />
+        <span>Remember me</span>
+      </Checkbox>
+      <Input
+        type="submit"
+        value="Sing In"
+        textColor="secondary"
+        color="primary"
       />
-      <Button type="primary" text="Sign up" hideIcon />
-    </AuthorizationSC>
+    </Form>
   );
-};
+  signUpForm = () => (
+    <Form>
+      <Input type="text" placeholder="Username" border />
+      <Input type="text" placeholder="E-mail" border />
+      <Input type="text" placeholder="Password" border />
+      <Checkbox>
+        <input type="checkbox" />
+        <span>I agree to the Terms</span>
+      </Checkbox>
+      <Input
+        type="submit"
+        value="Create account"
+        textColor="secondary"
+        color="primary"
+      />
+    </Form>
+  );
+
+
+
+  render() {
+    return (
+      <AuthorizationSC>
+        <Button
+          onClick={() => this.authButtonHandler("Sign In")}
+          type="secondary"
+          icon="search"
+          iconPosition="left"
+          text="Sign in"
+          margin_center
+        />
+        <Button
+          onClick={() => this.authButtonHandler("Sign Up")}
+          type="primary"
+          text="Sign up"
+          hideIcon
+        />
+        {this.state.isOpen && (
+          <Modal onClose={this.toggleModal}>
+            <ButtonsBlock>
+              {authButtonModal.map(btn => (
+                <FormSignButton
+                  onClick={() => this.setState({ authFormType: btn.key })}
+                  text={btn.text}
+                  isActive={this.state.authFormType === btn.key}
+                />
+              ))}
+            </ButtonsBlock>
+            {this.state.authFormType === "Sign In" && this.signInForm()}
+            {this.state.authFormType === "Sign Up" && this.signUpForm()}
+          </Modal>
+        )}
+      </AuthorizationSC>
+    );
+  }
+}
 
 export default Authorization;

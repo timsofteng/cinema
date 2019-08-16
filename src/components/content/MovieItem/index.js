@@ -17,10 +17,12 @@ import {
 } from "../HoverItem/styles";
 
 const _propTypes = {
+  onClick: PropTypes.func,
   image: PropTypes.string,
   title: PropTypes.string,
   raiting: PropTypes.number,
-  genre: PropTypes.array
+  genre: PropTypes.array,
+  overview: PropTypes.string
 };
 
 const _defaultProps = {
@@ -29,7 +31,7 @@ const _defaultProps = {
 };
 
 class MovieItem extends React.Component {
-  state = { viewInfo: false };
+  state = { viewInfo: false};
 
   onViewInfoClick = () => {
     this.setState({ viewInfo: true });
@@ -38,6 +40,8 @@ class MovieItem extends React.Component {
   offViewInfoClick = () => {
     this.setState({ viewInfo: false });
   };
+
+
 
   render() {
     console.log(this.state.viewInfo);

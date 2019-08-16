@@ -8,10 +8,9 @@ const _propTypes = {
   icon: PropTypes.string,
   iconPosition: PropTypes.oneOfType(["left", "right"]),
   border: PropTypes.bool,
-  text: PropTypes.string.isRequired,
+  text: PropTypes.string,
   hideIcon: PropTypes.bool,
   margin_center: PropTypes.bool,
-  justify: PropTypes.string
 };
 
 const _defaultProps = {
