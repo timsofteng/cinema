@@ -3,8 +3,7 @@ import styled from "styled-components";
 import {
   primaryColor,
   secondaryColor,
-  contentTabsBarColor
-} from "../../styles/constants";
+} from "../../../styles/constants";
 
 const FormSC = styled.div`
   display: flex;

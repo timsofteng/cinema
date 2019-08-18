@@ -1,15 +1,21 @@
 import React from "react";
 
-import { SortingMenuSC, ButtonMenu } from "./styles";
+import { SortingMenuSC, MenuButton } from "./styles";
+
+const sortingTegs = [
+  "Trending",
+  "Top Rated",
+  "New Arrivals",
+  "Trallers",
+  "Coming Soon",
+  "Genre"
+];
 
 const SortingMenu = () => (
   <SortingMenuSC>
-    <ButtonMenu>Trending</ButtonMenu>
-    <ButtonMenu>Top Rated</ButtonMenu>
-    <ButtonMenu>New Arrivals</ButtonMenu>
-    <ButtonMenu>Trallers</ButtonMenu>
-    <ButtonMenu>Coming Soon</ButtonMenu>
-    <ButtonMenu>Genre</ButtonMenu>
+    {sortingTegs.map(teg => (
+      <MenuButton>{teg}</MenuButton>
+    ))}
   </SortingMenuSC>
 );
 

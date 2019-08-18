@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { primaryColor } from "../../styles/constants";
+import { primaryColor } from "../../../styles/constants";
 
 const LabelSC = styled.div`
   color: ${props =>

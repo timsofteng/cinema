@@ -1,5 +1,5 @@
 import React from "react";
-import Label from "../../common/Label";
+import Label from "../common/Label";
 import Authorization from "./buttonBlock/Authorization";
 import Index from "./description";
 import Options from "./buttonBlock/Options";

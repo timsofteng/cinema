@@ -1,6 +1,10 @@
 import styled from "styled-components";
 
 const ModalSC = styled.div`
+  display: ${props => (props.isOpen ? "block" : "none")};
+`;
+
+const ModalWindow = styled.div`
   color: black;
   position: fixed;
   top: 50%;
@@ -19,4 +23,4 @@ const Background = styled.div`
   width: 100%;
 `;
 
-export { ModalSC, Background };
+export { ModalWindow, Background, ModalSC };

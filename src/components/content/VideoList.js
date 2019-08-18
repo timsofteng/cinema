@@ -1,9 +1,10 @@
 import React, { Fragment } from "react";
 import movies from "./movies.js";
-import {MovieItem} from "./MovieItem";
+import { MovieItem } from "./MovieItem";
 
-class VideoList extends React.Component {
-  renderMovies(movies) {
+const VideoList = () => {
+
+  const renderMovies = (movies) => {
     return movies.results.map(item => {
       return (
         <MovieItem
@@ -16,11 +17,9 @@ class VideoList extends React.Component {
         />
       );
     });
-  }
+  };
 
-  render() {
-    return <Fragment>{this.renderMovies(movies)}</Fragment>;
-  }
-}
+  return <Fragment>{renderMovies(movies)}</Fragment>;
+};
 
 export default VideoList;

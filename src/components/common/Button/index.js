@@ -10,7 +10,7 @@ const _propTypes = {
   border: PropTypes.bool,
   text: PropTypes.string,
   hideIcon: PropTypes.bool,
-  margin_center: PropTypes.bool,
+  marginCenter: PropTypes.bool
 };
 
 const _defaultProps = {
@@ -23,19 +23,18 @@ const Button = props => (
     onClick={props.onClick}
     type={props.type}
     border={props.border}
-    margin_center={props.margin_center}
-
+    marginCenter={props.marginCenter}
   >
     {props.hideIcon ? (
       props.text
     ) : (
-      <ButtonWithIcon >
+      <ButtonWithIcon>
         {props.iconPosition === "left" && (
-          <i className={`fas fa-${props.icon}`} />
-        )}&ensp;
-        <span>{props.text}</span>&ensp;
+          <i className={`fas fa-${props.icon} icon-left`} />
+        )}
+        <span>{props.text}</span>
         {props.iconPosition === "right" && (
-          <i className={`fas fa-${props.icon}`} />
+          <i className={`fas fa-${props.icon} icon-right`} />
         )}
       </ButtonWithIcon>
     )}

@@ -1,7 +1,7 @@
 import React from "react";
 import { FooterRowSC, Menu } from "./styles";
-import SocialNetworks from "../../../common/SocailNetworks";
-import Label from "../../../common/Label";
+import SocialNetworks from "../../common/SocailNetworks";
+import Label from "../../common/Label";
 
 const FooterRow = () => {
   return (
