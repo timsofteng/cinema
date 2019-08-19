@@ -2,7 +2,7 @@ import React from "react";
 
 import { ViewInfoSC, Content, Backdrop, FavoritesBar } from "./styles";
 
-import FilmDescription from "../FilmDescritption";
+import FilmDescription from "../../common/FilmDescritption";
 import Button from "../../common/Button";
 import Overview from "../../common/Overview";
 

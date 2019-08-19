@@ -1,9 +1,16 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import 'reset-css';
-import './styles/style.scss';
-import App from './components/App';
+import React from "react";
+import ReactDOM from "react-dom";
 
+import "reset-css";
+import "./styles/style.scss";
+import App from "./components/App";
 
+import { Provider } from "react-redux";
+import store from "./reducers/store";
 
-ReactDOM.render(<App/>, document.querySelector('#root'));
+ReactDOM.render(
+  <Provider store={store}>
+    <App />
+  </Provider>,
+  document.querySelector("#root")
+);

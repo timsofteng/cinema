@@ -1,11 +1,22 @@
 import React, { Fragment } from "react";
-import movies from "./movies.js";
+import axios from "axios";
+
+import KEY from '../../config'
+import { connect } from "react-redux";
 import { MovieItem } from "./MovieItem";
 
-const VideoList = () => {
 
-  const renderMovies = (movies) => {
-    return movies.results.map(item => {
+class VideoList extends React.Component {
+  componentDidMount() {
+    axios
+      .get(
+        `https://api.themoviedb.org/3/movie/22?api_key=${KEY}&language=en-US`
+      )
+      .then(response => console.log(response));
+  }
+
+  renderMovies() {
+    return this.props.movies.map(item => {
       return (
         <MovieItem
           image={`https://image.tmdb.org/t/p/w500${item.poster_path}`}
@@ -17,9 +28,15 @@ const VideoList = () => {
         />
       );
     });
-  };
+  }
 
-  return <Fragment>{renderMovies(movies)}</Fragment>;
+  render() {
+    return <Fragment>{this.renderMovies()}</Fragment>;
+  }
+}
+
+const mapStateToProps = state => {
+  return { movies: state.results };
 };
 
-export default VideoList;
+export default connect(mapStateToProps)(VideoList);

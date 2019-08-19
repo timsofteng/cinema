@@ -1,6 +1,6 @@
 import React from "react";
 import { FilmDescriptionSC, Genre, Title, TitleAndRaiting } from "./styles";
-import RaitingRatio from "../../common/RaitingRatio";
+import RaitingRatio from "../RaitingRatio";
 
 const FilmDescription = (props) => (
   <FilmDescriptionSC>

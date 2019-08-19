@@ -1,6 +1,11 @@
-import React from 'react'
-import {FormSC} from "./styles";
+import React from "react";
+import { FormSC } from "./styles";
 
-const Form = (props) => <FormSC>{props.children}</FormSC>
+class Form extends React.Component {
+
+  render() {
+    return <FormSC>{this.props.children}</FormSC>;
+  }
+}
 
 export default Form;

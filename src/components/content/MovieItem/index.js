@@ -2,8 +2,8 @@ import React, { Fragment } from "react";
 import PropTypes from "prop-types";
 
 import Button from "../../common/Button";
-import PlayButton from "../PlayButton";
-import FilmDescription from "../FilmDescritption";
+import PlayButton from "../../common/PlayButton";
+import FilmDescription from "../../common/FilmDescritption";
 import CoverImage from "../CoverImage";
 import ViewInfo from "../ViewInfo";
 

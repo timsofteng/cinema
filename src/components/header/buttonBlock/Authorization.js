@@ -22,6 +22,67 @@ const authButtonModal = [
   }
 ];
 
+class SignInForm extends React.Component {
+  state = { login: "", password: "" };
+
+  onFormSubmit = () => {
+    console.log(this.state.login);
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+
+  render() {
+    return (
+      <Form>
+        <Input
+          type="text"
+          name="login"
+          placeholder="Login"
+          value={this.state.login}
+          onChange={this.handleChange.bind(this)}
+          border
+        />
+        <Input
+          type="text"
+          name="password"
+          placeholder="Password"
+          value={this.state.password}
+          border
+        />
+        <Checkbox inputType="checkbox" text="Remember me" />
+        <Input
+          type="submit"
+          value="Sing In"
+          textColor="secondary"
+          color="primary"
+          onSubmit={this.onFormSubmit()}
+        />
+      </Form>
+    );
+  }
+}
+class SignUpForm extends React.Component {
+  state = {};
+  render() {
+    return (
+      <Form>
+        <Input type="text" placeholder="Username" border />
+        <Input type="text" placeholder="E-mail" border />
+        <Input type="text" placeholder="Password" border />
+        <Checkbox inputType="checkbox" text="I agree to the Terms" />
+        <Input
+          type="submit"
+          value="Create account"
+          textColor="secondary"
+          color="primary"
+        />
+      </Form>
+    );
+  }
+}
+
 class Authorization extends React.Component {
   state = { isOpen: false };
 
@@ -33,37 +94,6 @@ class Authorization extends React.Component {
     this.setState({ authFormType: type });
     this.toggleModal();
   }
-
-  signInForm = () => (
-    <Form>
-      <Input type="text" placeholder="Login" border />
-      <Input type="text" placeholder="Password" border />
-      <Checkbox>
-        <input type="checkbox" />
-        <span>Remember me</span>
-      </Checkbox>
-      <Input
-        type="submit"
-        value="Sing In"
-        textColor="secondary"
-        color="primary"
-      />
-    </Form>
-  );
-  signUpForm = () => (
-    <Form>
-      <Input type="text" placeholder="Username" border />
-      <Input type="text" placeholder="E-mail" border />
-      <Input type="text" placeholder="Password" border />
-      <Checkbox inputType="checkbox" text="I agree to the Terms" />
-      <Input
-        type="submit"
-        value="Create account"
-        textColor="secondary"
-        color="primary"
-      />
-    </Form>
-  );
 
   render() {
     return (
@@ -86,14 +116,15 @@ class Authorization extends React.Component {
           <ButtonsBlock>
             {authButtonModal.map(btn => (
               <FormSignButton
+                key={btn.text}
                 onClick={() => this.setState({ authFormType: btn.key })}
                 text={btn.text}
                 isActive={this.state.authFormType === btn.key}
               />
             ))}
           </ButtonsBlock>
-          {this.state.authFormType === "Sign In" && this.signInForm()}
-          {this.state.authFormType === "Sign Up" && this.signUpForm()}
+          {this.state.authFormType === "Sign In" && <SignInForm />}
+          {this.state.authFormType === "Sign Up" && <SignUpForm />}
         </Modal>
       </AuthorizationSC>
     );
