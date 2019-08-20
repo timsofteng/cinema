@@ -1,12 +1,17 @@
 import React from 'react';
+
+import TabsBar from './TabsBar'
 import VideoList from './VideoList';
-import {ContentSC} from "./styles";
+import {ContentMain, MovieList} from "./styles";
 
 const Content = () => {
     return(
-        <ContentSC>
+        <ContentMain>
+            <TabsBar/>
+        <MovieList>
             <VideoList />
-        </ContentSC>
+        </MovieList>
+        </ContentMain>
     )
 }
 

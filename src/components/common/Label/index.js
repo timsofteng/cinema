@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import { LabelSC, ThickText, ThinText } from "./styles";
-import { primaryColor } from "../../styles/constants";
+import { primaryColor } from "../../../styles/constants";
 
 const _propTypes = {
   sizeInherit: PropTypes.bool,

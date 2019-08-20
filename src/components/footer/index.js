@@ -1,7 +1,7 @@
 import React from "react";
 import FooterRow from "./FooterRow/";
 import { FooterSC, Copyright } from "./styles";
-import Label from "../../common/Label";
+import Label from "../common/Label";
 
 const Footer = () => {
   return (

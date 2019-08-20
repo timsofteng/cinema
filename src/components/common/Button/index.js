@@ -8,8 +8,9 @@ const _propTypes = {
   icon: PropTypes.string,
   iconPosition: PropTypes.oneOfType(["left", "right"]),
   border: PropTypes.bool,
-  text: PropTypes.string.isRequired,
-  hideIcon: PropTypes.bool
+  text: PropTypes.string,
+  hideIcon: PropTypes.bool,
+  marginCenter: PropTypes.bool
 };
 
 const _defaultProps = {
@@ -18,17 +19,22 @@ const _defaultProps = {
 };
 
 const Button = props => (
-  <ButtonSC type={props.type} border={props.border}>
+  <ButtonSC
+    onClick={props.onClick}
+    type={props.type}
+    border={props.border}
+    marginCenter={props.marginCenter}
+  >
     {props.hideIcon ? (
       props.text
     ) : (
       <ButtonWithIcon>
         {props.iconPosition === "left" && (
-          <i className={`fas fa-${props.icon}`} />
+          <i className={`fas fa-${props.icon} icon-left`} />
         )}
         <span>{props.text}</span>
         {props.iconPosition === "right" && (
-          <i className={`fas fa-${props.icon}`} />
+          <i className={`fas fa-${props.icon} icon-right`} />
         )}
       </ButtonWithIcon>
     )}
