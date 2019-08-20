@@ -25,6 +25,7 @@ const Input = props => (
     textColor={props.textColor}
     color={props.color}
     border={props.border}
+    onChange={props.onChange}
   />
 );
 

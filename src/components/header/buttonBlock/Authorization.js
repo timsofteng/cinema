@@ -25,7 +25,8 @@ const authButtonModal = [
 class SignInForm extends React.Component {
   state = { login: "", password: "" };
 
-  onFormSubmit = () => {
+  onFormSubmit = event => {
+    event.preventDefault();
     console.log(this.state.login);
   };
 
@@ -35,7 +36,7 @@ class SignInForm extends React.Component {
 
   render() {
     return (
-      <Form>
+      <Form onSubmit={this.onFormSubmit}>
         <Input
           type="text"
           name="login"
@@ -49,6 +50,7 @@ class SignInForm extends React.Component {
           name="password"
           placeholder="Password"
           value={this.state.password}
+          onChange={this.handleChange.bind(this)}
           border
         />
         <Checkbox inputType="checkbox" text="Remember me" />
@@ -57,20 +59,49 @@ class SignInForm extends React.Component {
           value="Sing In"
           textColor="secondary"
           color="primary"
-          onSubmit={this.onFormSubmit}
         />
       </Form>
     );
   }
 }
 class SignUpForm extends React.Component {
-  state = {};
+  state = { username: "", email: "", password: "" };
+
+  onFormSubmit = event => {
+    event.preventDefault();
+    console.log(this.state.username);
+  };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
   render() {
     return (
-      <Form>
-        <Input type="text" placeholder="Username" border />
-        <Input type="text" placeholder="E-mail" border />
-        <Input type="text" placeholder="Password" border />
+      <Form onSubmit={this.onFormSubmit}>
+        <Input
+          type="text"
+          name="username"
+          placeholder="Username"
+          value={this.state.username}
+          onChange={this.handleChange.bind(this)}
+          border
+        />
+        <Input
+          type="text"
+          name="email"
+          placeholder="E-mail"
+          value={this.state.email}
+          onChange={this.handleChange.bind(this)}
+          border
+        />
+        <Input
+          type="text"
+          name="password"
+          placeholder="Password"
+          value={this.state.password}
+          onChange={this.handleChange.bind(this)}
+          border
+        />
         <Checkbox inputType="checkbox" text="I agree to the Terms" />
         <Input
           type="submit"
