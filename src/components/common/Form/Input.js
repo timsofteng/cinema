@@ -5,6 +5,7 @@ import { InputSC } from "./styles";
 
 const _propTypes = {
   type: PropTypes.string,
+  name: PropTypes.string,
   placeholder: PropTypes.string,
   value: PropTypes.string,
   color: PropTypes.string,
@@ -17,15 +18,14 @@ const _defaultProps = {
 
 const Input = props => (
   <InputSC
+    name={props.name}
     type={props.type}
     placeholder={props.placeholder}
     value={props.value}
     textColor={props.textColor}
     color={props.color}
     border={props.border}
-  >
-    {props.children}
-  </InputSC>
+  />
 );
 
 Input.propTypes = _propTypes;

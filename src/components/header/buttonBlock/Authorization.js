@@ -57,7 +57,7 @@ class SignInForm extends React.Component {
           value="Sing In"
           textColor="secondary"
           color="primary"
-          onSubmit={this.onFormSubmit()}
+          onSubmit={this.onFormSubmit}
         />
       </Form>
     );

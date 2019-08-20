@@ -31,20 +31,13 @@ const _defaultProps = {
 };
 
 class MovieItem extends React.Component {
-  state = { viewInfo: false};
+  state = { viewInfo: false };
 
-  onViewInfoClick = () => {
-    this.setState({ viewInfo: true });
+  toggleViewInfo = () => {
+    this.setState({ viewInfo: !this.state.viewInfo });
   };
-
-  offViewInfoClick = () => {
-    this.setState({ viewInfo: false });
-  };
-
-
 
   render() {
-    console.log(this.state.viewInfo);
     return (
       <MovieItemSC>
         <HoverItemSC>
@@ -52,7 +45,7 @@ class MovieItem extends React.Component {
           <ContentOnHover>
             {this.state.viewInfo ? (
               <ViewInfo
-                onClick={this.offViewInfoClick}
+                onClick={this.toggleViewInfo}
                 src={this.props.image}
                 alt={this.props.title}
                 title={this.props.title}
@@ -64,7 +57,7 @@ class MovieItem extends React.Component {
               <ScopeOnHover>
                 <PlayButton text="Watch Now" />
                 <Button
-                  onClick={this.onViewInfoClick}
+                  onClick={this.toggleViewInfo}
                   type="secondary"
                   text="View Info"
                   border
