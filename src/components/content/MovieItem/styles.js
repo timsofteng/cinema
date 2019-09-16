@@ -1,16 +1,19 @@
 import styled from "styled-components";
-import { contentPrimaryColor, secondaryColor } from "../../../styles/constants";
+import {  secondaryColor } from "../../../styles/constants";
 
 const MovieItemSC = styled.div`
-  height: 400px;
-  width: 330px;
+  height: ${props => (props.view==="no_wrap" ? "700px" : "440px")};
+  width: ${props => (props.view==="no_wrap" ? "100%" : "330px")};
   margin-top: 1.5em;
   position: relative;
+  display: flex;
+  flex-direction: column;
 `;
 
 const ImageContainer = styled.div`
-  height: 70%;
+  height: 100%;
   width: 100%;
+  position: relative;
 `;
 
 const Image = styled.img`
@@ -22,12 +25,14 @@ const Image = styled.img`
 `;
 
 const ItemBottom = styled.div`
-  height: 30%;
+  height: 8em;
   background-color: ${secondaryColor};
   border-radius: 0 0 5px 5px;
   padding-left: 1.8em;
   padding-right: 1.8em;
-  padding-top: 3em;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 `
 
 export {

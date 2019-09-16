@@ -8,6 +8,8 @@ const ViewInfoSC = styled.div`
   background-image: url(${props => props.src});
   background-position: top center;
   background-size: cover;
+  z-index: 1;
+  position: absolute;
 `;
 
 const Backdrop = styled.div`

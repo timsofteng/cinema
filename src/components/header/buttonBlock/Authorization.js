@@ -27,7 +27,6 @@ class SignInForm extends React.Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.login);
   };
 
   handleChange = event => {
@@ -69,7 +68,6 @@ class SignUpForm extends React.Component {
 
   onFormSubmit = event => {
     event.preventDefault();
-    console.log(this.state.username);
   };
 
   handleChange = event => {
@@ -115,22 +113,22 @@ class SignUpForm extends React.Component {
 }
 
 class Authorization extends React.Component {
-  state = { isOpen: false };
-
-  toggleModal = () => {
-    this.setState({ isOpen: !this.state.isOpen });
-  };
-
-  authButtonHandler(type) {
-    this.setState({ authFormType: type });
-    this.toggleModal();
-  }
+  // state = { isOpen: false };
+  //
+  // toggleModal = () => {
+  //   this.setState({ isOpen: !this.state.isOpen });
+  // };
+  //
+  // authButtonHandler(type) {
+  //   this.setState({ authFormType: type });
+  //   this.toggleModal();
+  // }
 
   render() {
     return (
       <AuthorizationSC>
         <Button
-          onClick={() => this.authButtonHandler("Sign In")}
+          onClick={() => this.props.toggleModalClick("Sign In")}
           type="secondary"
           icon="search"
           iconPosition="left"
@@ -138,24 +136,27 @@ class Authorization extends React.Component {
           marginCenter
         />
         <Button
-          onClick={() => this.authButtonHandler("Sign Up")}
+          onClick={() => this.props.toggleModalClick("Sign Up")}
           type="primary"
           text="Sign up"
           hideIcon
         />
-        <Modal onClose={this.toggleModal} isOpen={this.state.isOpen}>
+        <Modal
+          onClose={() => this.props.toggleModalClick(false)}
+          isOpen={this.props.modal}
+        >
           <ButtonsBlock>
             {authButtonModal.map(btn => (
               <FormSignButton
                 key={btn.text}
-                onClick={() => this.setState({ authFormType: btn.key })}
+                onClick={() => this.props.toggleModalClick(btn.key)}
                 text={btn.text}
-                isActive={this.state.authFormType === btn.key}
+                isActive={this.props.modal === btn.key}
               />
             ))}
           </ButtonsBlock>
-          {this.state.authFormType === "Sign In" && <SignInForm />}
-          {this.state.authFormType === "Sign Up" && <SignUpForm />}
+          {this.props.modal === "Sign In" && <SignInForm />}
+          {this.props.modal === "Sign Up" && <SignUpForm />}
         </Modal>
       </AuthorizationSC>
     );

@@ -1,6 +1,6 @@
 import React from "react";
 import Label from "../common/Label";
-import Authorization from "./buttonBlock/Authorization";
+import AuthorizationContainer from "./buttonBlock/AuthorizationContainer";
 import Index from "./description";
 import Options from "./buttonBlock/Options";
 
@@ -11,7 +11,7 @@ const Header = () => {
     <HeaderSC>
       <TopBar>
         <Label firstWord="moovie" secondWord="rise" />
-        <Authorization />
+        <AuthorizationContainer />
       </TopBar>
       <BotomBar>
         <Index />

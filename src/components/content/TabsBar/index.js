@@ -1,13 +1,13 @@
 import React from "react";
 
-import SortingMenu from "./SortingMenu";
-import ViewList from "./ViewList";
+import SortingMenuContainer from "./SortingMenu/SortingMenuContainer";
+import ViewListContainer from "./ViewList/ViewListContainer";
 import { TabsBarSC } from "./styles";
 
 const TabsBar = () => (
   <TabsBarSC>
-    <SortingMenu />
-    <ViewList />
+    <SortingMenuContainer />
+    <ViewListContainer />
   </TabsBarSC>
 );
 

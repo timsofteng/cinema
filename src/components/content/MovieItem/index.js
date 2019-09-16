@@ -1,4 +1,4 @@
-import React, { Fragment } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 import Button from "../../common/Button";
@@ -31,43 +31,38 @@ const _defaultProps = {
 };
 
 class MovieItem extends React.Component {
-  state = { viewInfo: false };
-
-  toggleViewInfo = () => {
-    this.setState({ viewInfo: !this.state.viewInfo });
-  };
-
   render() {
     return (
-      <MovieItemSC>
-        <HoverItemSC>
-          <Backdrop />
-          <ContentOnHover>
-            {this.state.viewInfo ? (
-              <ViewInfo
-                onClick={this.toggleViewInfo}
-                src={this.props.image}
-                alt={this.props.title}
-                title={this.props.title}
-                raiting={this.props.raiting}
-                genre={this.props.genre}
-                overview={this.props.overview}
-              />
-            ) : (
-              <ScopeOnHover>
-                <PlayButton text="Watch Now" />
-                <Button
-                  onClick={this.toggleViewInfo}
-                  type="secondary"
-                  text="View Info"
-                  border
-                  hideIcon
-                />
-              </ScopeOnHover>
-            )}
-          </ContentOnHover>
-        </HoverItemSC>
+      <MovieItemSC view={this.props.view}>
+        {this.props.id === this.props.selectedId && (
+          <ViewInfo
+            onClick={() => this.props.toggleViewInfo(false)}
+            src={this.props.image}
+            alt={this.props.title}
+            title={this.props.title}
+            raiting={this.props.raiting}
+            genre={this.props.genre}
+            overview={this.props.overview}
+          />
+        )}
         <ImageContainer>
+          <HoverItemSC>
+            <Backdrop />
+            <ContentOnHover>
+              {this.props.id !== this.props.selectedId && (
+                <ScopeOnHover>
+                  <PlayButton text="Watch Now" />
+                  <Button
+                    onClick={() => this.props.toggleViewInfo(this.props.id)}
+                    type="secondary"
+                    text="View Info"
+                    border
+                    hideIcon
+                  />
+                </ScopeOnHover>
+              )}
+            </ContentOnHover>
+          </HoverItemSC>
           <CoverImage src={this.props.image} alt={this.props.title} />
         </ImageContainer>
         <ItemBottom>
@@ -85,4 +80,4 @@ class MovieItem extends React.Component {
 MovieItem.propTypes = _propTypes;
 MovieItem.defaultProps = _defaultProps;
 
-export { MovieItem };
+export default MovieItem;
