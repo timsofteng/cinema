@@ -5,10 +5,10 @@ import { secondaryColor } from "../../../styles/constants";
 const DesctiptionSC = styled.div`
   font-family: "Helvetica Neue", Arial, sans-serif;
   color: ${secondaryColor};
-  height: 6em;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  height: initial;
 `;
 
 const TitleSC = styled.div`

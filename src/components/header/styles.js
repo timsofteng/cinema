@@ -31,6 +31,8 @@ const BotomBar = styled.div`
   margin-bottom: 2em;
   margin-left: 4em;
   margin-right: 4em;
+    height: initial;
+
 `;
 
 export { HeaderSC, TopBar, BotomBar };
