@@ -5,7 +5,7 @@ import {
   secondaryColor,
 } from "../../../styles/constants";
 
-const FormSC = styled.form`
+const FormSC = styled.div`
   display: flex;
   flex-direction: column;
   padding: 1em;

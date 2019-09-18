@@ -1,48 +1,47 @@
 import React from "react";
-import Form from "../../Form";
+
+import { Field, reduxForm } from "redux-form";
 import Input from "../../Form/Input";
 import Checkbox from "../../Form/Checkbox";
 
 class SignInForm extends React.Component {
-  state = { login: "", password: "" };
-
-  onFormSubmit = event => {
-    event.preventDefault();
-  };
-
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  // state = { login: "", password: "" };
+  //
+  // onFormSubmit = event => {
+  //   event.preventDefault();
+  // };
+  //
+  // handleChange = event => {
+  //   this.setState({ [event.target.name]: event.target.value });
+  // };
 
   render() {
+    const { handleSubmit } = this.props;
+
+    const submit = values => console.log(values);
     return (
-      <Form onSubmit={this.onFormSubmit}>
-        <Input
+      <form onSubmit={handleSubmit(submit)}>
+        <Field
           type="text"
+          component={Input}
           name="login"
           placeholder="Login"
-          value={this.state.login}
-          onChange={this.handleChange.bind(this)}
           border
         />
-        <Input
+        <Field
           type="text"
+          component={Input}
           name="password"
           placeholder="Password"
-          value={this.state.password}
-          onChange={this.handleChange.bind(this)}
           border
         />
-        <Checkbox inputType="checkbox" text="Remember me" />
-        <Input
-          type="submit"
-          value="Sing In"
-          textColor="secondary"
-          color="primary"
-        />
-      </Form>
+        <Field component={Checkbox} inputType="checkbox" text="Remember me" />
+        <button type="submit" color="primary" />
+      </form>
     );
   }
 }
 
-export {SignInForm}
+SignInForm = reduxForm({ forms: "signInForm" })(SignInForm);
+
+export default SignInForm;

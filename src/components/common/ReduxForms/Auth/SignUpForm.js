@@ -1,55 +1,58 @@
 import React from "react";
+import {Field, reduxForm} from "redux-form";
+
 import Form from "../../Form";
 import Input from "../../Form/Input";
 import Checkbox from "../../Form/Checkbox";
 
 class SignUpForm extends React.Component {
-  state = { username: "", email: "", password: "" };
-
-  onFormSubmit = event => {
-    event.preventDefault();
-  };
-
-  handleChange = event => {
-    this.setState({ [event.target.name]: event.target.value });
-  };
+  // state = { username: "", email: "", password: "" };
+  //
+  // onFormSubmit = event => {
+  //   event.preventDefault();
+  // };
+  //
+  // handleChange = event => {
+  //   this.setState({ [event.target.name]: event.target.value });
+  // };
   render() {
+      const { handleSubmit } = this.props;
+
+      const submit = values => console.log(values);
     return (
-      <Form onSubmit={this.onFormSubmit}>
-        <Input
+      <form onSubmit={handleSubmit(submit)}>
+        <Field
           type="text"
           name="username"
+          component={Input}
           placeholder="Username"
-          value={this.state.username}
-          onChange={this.handleChange.bind(this)}
           border
         />
-        <Input
+        <Field
           type="text"
           name="email"
+          component={Input}
           placeholder="E-mail"
-          value={this.state.email}
-          onChange={this.handleChange.bind(this)}
           border
         />
-        <Input
+        <Field
           type="text"
           name="password"
+          component={Input}
           placeholder="Password"
-          value={this.state.password}
-          onChange={this.handleChange.bind(this)}
           border
         />
         <Checkbox inputType="checkbox" text="I agree to the Terms" />
-        <Input
+        <button
           type="submit"
-          value="Create account"
           textColor="secondary"
           color="primary"
         />
-      </Form>
+      </form>
     );
   }
 }
 
-export { SignUpForm };
+SignUpForm = reduxForm ({forms: 'singUpForm'})(SignUpForm)
+
+export default SignUpForm;

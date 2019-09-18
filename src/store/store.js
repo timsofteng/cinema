@@ -8,7 +8,7 @@ import createSagaMiddleware from "redux-saga";
 import moviesReducer from "./movies/reducer";
 import modalReducer from "./modal/reducer";
 
-const reducers = { moviesReducer, modalReducer, form: formReducer };
+const reducers = { moviesReducer, modalReducer, forms: formReducer };
 
 const rootReducer = combineReducers(reducers);
 

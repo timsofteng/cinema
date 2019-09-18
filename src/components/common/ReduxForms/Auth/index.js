@@ -1,11 +1,12 @@
-import { ButtonsBlock } from "../../Form/styles";
-import FormSignButton from "../../Form/FormSignButton";
 import React, { Fragment } from "react";
-
-import { SignInForm } from "./SignInForm";
-import { SignUpForm } from "./SignUpForm";
-import { toggleModal } from "../../../../store/modal/actions";
 import { connect } from "react-redux";
+
+import { ButtonsBlock } from "../../Form/styles";
+import Form from "../../Form";
+import FormSignButton from "../../Form/FormSignButton";
+import SignInForm from "./SignInForm";
+import SignUpForm from "./SignUpForm";
+import { toggleModal } from "../../../../store/modal/actions";
 
 const authButtonModal = [
   {
@@ -33,8 +34,10 @@ class AuthForm extends React.Component {
             />
           ))}
         </ButtonsBlock>
-        {this.props.modal === "Sign In" && <SignInForm />}
-        {this.props.modal === "Sign Up" && <SignUpForm />}
+        <Form>
+          {this.props.modal === "Sign In" && <SignInForm />}
+          {this.props.modal === "Sign Up" && <SignUpForm />}
+        </Form>
       </Fragment>
     );
   }
