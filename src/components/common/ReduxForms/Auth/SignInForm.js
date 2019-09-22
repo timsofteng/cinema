@@ -42,6 +42,6 @@ class SignInForm extends React.Component {
   }
 }
 
-SignInForm = reduxForm({ forms: "signInForm" })(SignInForm);
+SignInForm = reduxForm({ form: "signInForm" })(SignInForm);
 
 export default SignInForm;

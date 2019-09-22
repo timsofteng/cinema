@@ -5,6 +5,7 @@ import { fetchMovies } from "../api-client/fetchMovies";
 function* fetchMoviesWorker(action) {
   try {
     const response = yield call(fetchMovies, action.payload.id, action.payload.page);
+    console.log(response)
     yield put({
       type: "FETCH_MOVIES_SUCCEED",
       payload: { response, id: action.payload.id, reset: action.payload.reset }
